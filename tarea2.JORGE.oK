@@ -1,0 +1,280 @@
+// JORGE:)
+
+//6) Ingresar 3 números, determinar cuál es el mayor o si son iguales
+// BOSQUEJO:
+// ENTRADA: Definimos las variables y las inicializamos.
+// num1=0(leida);num2=0(leida);num3=0(leida)
+// PROCESO: Preguntamos al usuario los 3 numeros y los leemos en sus respectivas variables.
+// Condicionamos que Si numero 1 es mayor que numero 2 y numero 1 es mayor que numero 3 : numero 1 es mayor.
+// condicionamios nuevamente que Si numero 2 es mayor que numero 1 y numero 2 es mayor que numero 3 : numero 2 es mayor.
+// condicionamos nuevamente que Si numero 3 es mayor que numero 1 y numero 3 es mayor que numero 2 : numero 3 es mayor, y SINO : Son IGUALES.
+// SALIDA: Mostramos de acuerdo a su condicion.
+funcion ejer6
+	Definir num1,num2,num3 Como Entero
+	num1=0;num2=0;num3=0
+	Escribir "Ingrese los 3 numeros"
+	leer num1,num2,num3
+	Si num1>num2 y num1>num3 Entonces
+		escribir "El numero:",num1," es el mayor"
+	SiNo
+		Si num2>num1 y num2>num3 Entonces
+			Escribir "El numero:",num2," es el mayor"
+		SiNo
+			Si num3>num1 y num3>num2 Entonces
+				Escribir "El numero:",num3," es el mayor"
+			SiNo
+				Escribir "Los numeros son iguales"
+			Fin Si
+		Fin Si
+	Fin Si
+FinFuncion
+
+//7) Ingresar un numero y determinar si es neutro, positivo o negativo
+// BOSQUEJO:
+// ENTRADA: Definimos la variable num=0(leida),y la inicializamos.
+// preguntamos al usuario el numero y lo leemos en la variable num.
+// PROCESO:
+// Condicionamos que si num es mayor a 0 : este numero es Positivo 
+// Condicionamos nuevamente que si num es menor a 0 : este numero es Negativo y Si no :
+// Este numero es Cero
+// SALIDA: Mostramos de acuerdo a su condicion.
+Funcion ejer7
+	Definir num Como Entero
+	num=0
+	Escribir "Ingrese el numero a evaluar:"
+	leer num
+	Si num>0 Entonces
+		Escribir "este numero es positivo"
+	SiNo
+		Si num<0 Entonces
+			Escribir "este numero es negativo"
+		SiNo
+			Escribir "este numero es cero"
+		Fin Si
+	Fin Si
+FinFuncion
+
+//8) Determinar cuanto se debe pagar por x cantidad de lápices,considerando que si son
+// más de 1000 el costo es de 1 , caso contrario el precio será 1,50.
+// BOSQUEJO:
+// ENTRADA: Definimos las variables como entero y real y las inicializamos.
+// cant=0(leida);val=(asiganada);total=0.0(calculada)
+// PROCESO: Preguntamos al usuario la cantidad de lapices y lomleemos en la variable cant.
+// Condicionamos que si cant es menor a 1000 : val=1.5 y si cant>1000 : val=1.5
+// Hacemos los calculos: total= cant*val
+// SALIDA: Mostramos el rango de valor de acuerdo a su condicion y el total a pagar por dicha cantidad de lapices.
+Funcion ejer8
+	definir cant como entero
+	Definir val,total como real
+	val=0.0
+	Escribir "ingrese la cantidad de lapices:"
+	leer cant
+	Si cant<1000 Entonces
+		val=1
+	 SiNo
+		Si cant>1000 Entonces
+			val=1.5
+		Fin Si
+	Fin Si
+	total=cant*val
+	Escribir "La cantidad ingresada esta en el rango que cada lapiz:$",val
+	Escribir "La cantidad que se debe pagar por los lapices es de:",total
+FinFuncion
+
+//9) Almacén "Somos Mas" tiene una promoción: a todos los trajes que tienen un precio superior a 
+// 2500, se les aplicará un descuento del 15%,a todo los demás se les aplicará sólo el 8%
+// BOSQUEJO:
+// ENTRADA: Definimos las variables en este caso como real ya que vamos a manejar porcentajes y las inicializamos.
+// prec=0.0(leida);pordes=0.08;desc=0.0(calculada);total=0.0
+// PROCESO:
+// Preguntamos al usuario el precio del traje y lo leemos en la variable prec.
+// Condicionamos que si prec es mayor a 2500 : pordes= 0.15
+// Hacemos los calculos: El Descuento va a hacer igual a : desc=prec*pordes y el total a : prec-desc
+// SALIDA: Mostramos el porcentaje de descuento de acuerdo a su condicion ; Mostramos el descuento a su traje ; Mostramos el total final.
+Funcion ejer9
+	Definir prec,pordes,desc,total Como Real
+	prec=0.0;pordes=0.08;desc=0.0;total=0.0
+	Escribir "Ingrese el precio del traje:"
+	leer prec
+	Si prec>2500 Entonces
+		pordes=0.15
+	Fin Si
+	desc=prec*pordes
+	total=prec-desc
+	Escribir "Su porcentaje de descuento es de:",pordes*100,"%"
+	Escribir "El descuento a su traje es de:",desc
+	Escribir "El total de la compra es de:",total
+FinFuncion
+
+//10) "Somos Mas" es una empresa dedicada a ofrecer banquetes; sus tarifas son
+// las siguientes:El costo de platillo por persona es de $95.00, pero si el número de
+// personas es mayor a 200 pero menor o igual a 300, el costo es de $85.00.
+// Para más de 300 personas el costo por platillo es de $75.00. Se requiere un algoritmo que ayude 
+// a determinar el presupuesto que se debe presentar a los clientes que deseen realizar un evento.
+// BOSQUEJO:
+// ENTRADA: Definimos las variables en este caso como entero y real y las inicializamos.
+// numer=0(leida);cost=0.0(95.00);tot=0.0(calculada)
+// PROCESO: Preguntamos al usuario el numero de personas y la leemos en la variable numer.
+// Condicionamos que Si numer es mayor a 200 y numer es menor o igual 300 : cost=85.00   (es decir desde 200 hasta 300 personas)
+// condicionamos nuevamente que Si numer es mayor a 300 : cost=75.00   (es decir mas de 300 personas)
+// Hacemos los calculos para saber cuanto debe ser el presupuesto : tot=numer * cost 
+// SALIDA: Mostramos el costo por platillo de acuerdo al rango establecido y el presupuesto  de acuerdo a la condicion.
+Funcion ejer10
+	definir numer Como Entero
+	Definir cost,tot como real
+	cost=95.00
+	Escribir "Ingrese el numero de personas:"
+	leer numer
+	Si numer>200 y numer<=300 Entonces
+		cost=85.00
+	SiNo
+		Si numer>300  Entonces
+			cost=75.00
+		Fin Si
+	Fin Si
+	tot=numer*cost
+	Escribir "El costo por platillo de acuerdo al rango de personas es de:",cost
+	Escribir "El presuesto para dicho banquete es de:",tot
+FinFuncion
+
+//21)Escribir un algoritmo que lea cuatro números y determine si el numero 1 es la mitad 
+//del numero 2; Y si el numero 3 es divisor del 4.
+// BOSQUEJO:
+// ENTRADA: Definimos las variables en este caso como entero y las inicializamos.
+// num1=0;num2=0;num3=0;num4=0
+// PROCESO: Para saber si que el numero 1 sea la mitad del numero 2,Condicionamos que si : el numero 1 sea multiplicado * 2
+// sea igual a numero 2,ya que es una manera simple de comprobarlo, y si no es mostramos que no es la mitad.
+// Para saber si el numero3 es divisor del numero4,Condicionamos que si : el numero4 MOD numero3 = 0,en este caso al divir los 2 numeros
+// el residuo es 0 : num3 es un divisor de num4, y si no es mostramos que no es dividor de dicho numero.
+// SALIDA: Mostramos el resultado de acuerdo a su condicion.
+Funcion  ejer21
+    Definir num1, num2, num3, num4 Como Entero
+	num1=0;num2=0;num3=0;num4=0
+    Escribir "Ingrese los 4 números: "
+    Leer num1,num2,num3,num4
+    Si (num1 * 2 = num2) Entonces
+        Escribir "El primer número es la mitad del segundo número."
+    Sino
+        Escribir "El primer número no es la mitad del segundo número."
+    FinSi
+	
+    Si (num4 mod num3 = 0) Entonces
+        Escribir "El tercer número es divisor del cuarto número."
+    Sino
+        Escribir "El tercer número no es divisor del cuarto número."
+    FinSi
+FinFuncion
+
+//22) Escribir un algoritmo que lea tres números y determine si el numero 1 es el doble del 
+// numero 2 y 20% menos que el numero 3.
+// BOSQUEJO:
+// ENTRADA:Definimos 3 variables  las cuales las llamaremos num1=0(leida),num2=0(leida),num3=0(leida), y las inicializamos.
+// PROCESO: Preguntamos al usuario los 3 numeros y los leemos en sus respectivas variables.
+// Para saber si el numero1  es el doble del numero2,Condicionamos que si : (numero1 es igual a 2 * numero2),ya que esta es una manera simple de comprobarlo.
+// Usamos un Y para poder combinar las 2 condiciones que por ende deben ser verdaderas : Y numero1 es igual a numero3 - (numero3*0.2),lo q hacemos aqui es que 
+// sacamos el 20% al numero3 del cual el mismo se le resta a numero3, y por ende tiene que ser igual al numero1.y si no se cumple mostramos en pantalla : no cumple!.
+// SALIDA: Mostramos de acuerdo a la condicion que se presente.
+Funcion ejer22
+	Definir num1, num2, num3 Como Real
+	num1=0.0;num2=0.0;num3=0.0
+    Escribir "Ingrese los 3 numeros: "
+    Leer num1,num2,num3
+	
+    Si (num1 = 2 * num2)  Y num1 = num3 -(num3*0.2)  Entonces
+        Escribir "El primer numero es el doble del segundo"
+		Escribir "El primer numero es 20% menos que el tercer número."
+    Sino
+        Escribir "El primer número no cumple con las condiciones."
+    FinSi
+FinFuncion
+
+//23) Realizar un programa que ingrese un número presentar un mensaje equivalente a los días de la semana,dia1=Lunes;dia2=Martes ........cualquier 
+// otro valor : error.
+// BOSQUEJO:
+// ENTRADA: Definimos una variable llamada "dia"=0(leida),y la inicializamos.
+// PROCESO: Preguntamos al usuario un numero del 1-7 y lo leemos en la variable "dia".
+// Hacemos una estructura de swicht o Segun,y le asignamos un valor a dichas opciones : dia1=lunes;dia2=martes....
+// Salida: Mostramos el resultado de acuerdo a la eleccion del usuario.
+Funcion ejer23
+	Definir dia Como Entero
+	dia=0
+	Escribir "Ingresa un numero del 1 al 7 para presentar el dia respectivo:"
+	Leer dia 
+	Segun dia Hacer
+		1:
+			Escribir "Su dia es:Lunes"
+		2:
+			Escribir "Su dia es:Martes"
+		3:
+			Escribir "Su dia es:Miercoles"
+		4:
+			Escribir "Su dia es:Jueves"
+		5:
+			Escribir "Su dia es:Viernes"
+		6:
+			Escribir "Su dia es:Sabado"
+		7:
+			Escribir "Su dia es:Domingo"
+			
+		De Otro Modo:
+			Escribir "ERROR!"
+	Fin Segun
+FinFuncion
+
+
+//24) Realizar un programa que ingrese un número presentar un mensaje equivalente a los nombres de los meses del año.
+// BOSQUEJO:
+// ENTRADA: Definimos una variable llamada "mes"=0(leida),y la inicializamos.
+// PROCESO: Preguntamos al usuario un numero del 1-12 y lo leemos en la variable "mes".
+// Hacemos una estructura de swicht o Segun,y le asignamos un valor a dichas opciones : mes1=enero;mes2=febrero......
+// Salida: Mostramos el resultado de acuerdo a la eleccion del usuario.
+Funcion ejer24
+	Definir mes Como Entero
+	mes=0
+	Escribir"Ingrese el numero del 1-12 para presentar el mes:"
+	leer mes
+	Segun mes  Hacer
+		1:
+			Escribir "Su mes es:Enero"
+		2:
+			Escribir "Su mes es:Febrero"
+		3:
+			Escribir "Su mes es:Marzo"
+		4:
+			Escribir "Su mes es:Abril"
+		5:
+			Escribir "Su mes es:Mayo"
+		6:
+			Escribir "Su mes es:Junio"
+		7:
+			Escribir "Su mes es:Julio"
+		8:
+			Escribir "Su mes es:Agosto"
+		9:
+			Escribir "Su mes es:Septiembre"
+		10:
+			Escribir "Su mes es:Octubre"
+		11:
+			Escribir "Su mes es:Noviembre"
+		12:
+			Escribir "Su mes es:Diciembre"
+		De Otro Modo:
+			Escribir "ERROR!"
+	Fin Segun
+FinFuncion
+
+
+
+
+Algoritmo tarea2ok
+//	ejer6
+//	ejer7
+//  ejer8
+//  ejer9
+//	ejer10
+	
+//  ejer21
+//	ejer22
+//  ejer23
+	ejer24
+FinAlgoritmo
